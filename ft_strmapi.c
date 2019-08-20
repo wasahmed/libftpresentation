@@ -31,11 +31,12 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	ft_toupper(char c)
+char	ft_toupper(unsigned int i,char c)
 {
+	i = 1;
 	if (c >= 'a' && c <= 'z')
 	{
-		c -= 32;
+		c -= 32 - i;
 	}
 	return (c);
 }
@@ -67,6 +68,6 @@ int		main()
 	unsigned int i = 0;
 
 	f = &ft_toupper;
-	ft_putstr(ft_strmapi(s, *f[i]));
+	ft_putstr(ft_strmapi(s, f));
 	return(0);
 }
